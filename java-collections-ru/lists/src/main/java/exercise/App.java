@@ -10,7 +10,7 @@ public class App {
         String[] lettersChars = letters.toLowerCase().split("");
         List<String> sourceCharList = new ArrayList<>(Arrays.asList(lettersChars));
 
-        String[] wordChars = word.split("");
+        String[] wordChars = word.toLowerCase().split("");
         List<String> wordCharList = new ArrayList<>(Arrays.asList(wordChars));
 
         if (sourceCharList.size() < wordCharList.size()) {
@@ -18,7 +18,7 @@ public class App {
         }
 
         for (String character : wordCharList) {
-            if (!letters.contains(character)) {
+            if (!sourceCharList.contains(character)) {
                 return false;
             }
             sourceCharList.remove(character);
